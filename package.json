@@ -6,6 +6,9 @@
     "name": "Vitaliy Potapov",
     "email": "noginsk@rambler.ru"
   },
+  "engines": {
+    "node": "6"
+  },
   "scripts": {
     "code": "echo ok",
     "start": "node src/index",
