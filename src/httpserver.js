@@ -36,6 +36,7 @@ var net = require('selenium-webdriver/net'),
  */
 var Server = function(requestHandler) {
   var server = http.createServer(function(req, res) {
+    console.log('request!!', req);
     requestHandler(req, res);
   });
 
@@ -58,12 +59,18 @@ var Server = function(requestHandler) {
     assert(typeof opt_port !== 'function',
            "start invoked with function, not port (mocha callback)?");
     var port = opt_port || portprober.findFreePort('localhost');
-    return promise.when(port, function(port) {
-      return promise.checkedNodeCall(
-          server.listen.bind(server, port, 'localhost'));
-    }).then(function() {
-      return server.address();
-    });
+    // return promise.when(port, function(port) {
+    //   return promise.checkedNodeCall(
+    //       server.listen.bind(server, port, 'localhost'));
+    // }).then(function() {
+    //   return server.address();
+    // });
+    return new Promise(r => {
+        server.listen(port, 'localhost', function(err) {
+          console.log('listen!!', err);
+          r();
+        });
+    })
   };
 
   /**
