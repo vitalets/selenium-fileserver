@@ -21,9 +21,9 @@ var assert = require('assert'),
     http = require('http'),
     url = require('url');
 
-var net = require('../../net'),
-    portprober = require('../../net/portprober'),
-    promise = require('../..').promise;
+var net = require('selenium-webdriver/net'),
+    portprober = require('selenium-webdriver/net/portprober'),
+    promise = require('selenium-webdriver').promise;
 
 
 
