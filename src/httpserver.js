@@ -66,7 +66,8 @@ var Server = function(requestHandler) {
     //   return server.address();
     // });
     return new Promise(r => {
-        server.listen(port, 'localhost', function(err) {
+        // server.listen(port, 'localhost', function(err) {
+        server.listen(port, function(err) {
           console.log('listen!!', err);
           r();
         });
