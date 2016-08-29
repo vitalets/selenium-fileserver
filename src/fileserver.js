@@ -26,7 +26,7 @@ var express = require('express');
 var multer = require('multer');
 var serveIndex = require('serve-index');
 
-var Server = require('selenium-webdriver/lib/test/httpserver').Server,
+var Server = require('./httpserver').Server,
     resources = require('selenium-webdriver/lib/test/resources'),
     isDevMode = require('selenium-webdriver/lib/devmode'),
     promise = require('selenium-webdriver/lib/promise');
