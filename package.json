@@ -1,13 +1,13 @@
 {
   "name": "selenium-fileserver",
   "version": "0.1.0",
-  "description": "Serve selenium self test pages",
+  "description": "Public website serving Selenium self-test static pages",
   "author": {
     "name": "Vitaliy Potapov",
     "email": "noginsk@rambler.ru"
   },
   "engines": {
-    "node": "~6.11.1"
+    "node": ">=6"
   },
   "scripts": {
     "start": "node src/index",
